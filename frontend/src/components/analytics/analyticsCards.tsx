@@ -17,7 +17,7 @@ export default function AnalyticsCards({ analytics }: Props) {
                 </p>
 
                 <h2 className="text-3xl font-bold mt-3">
-                    ₹{analytics.totalSpend}
+                    ₹{analytics.totalSpend.toFixed(0)}
                 </h2>
 
             </div>

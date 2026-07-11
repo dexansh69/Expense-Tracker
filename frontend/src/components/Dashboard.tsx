@@ -13,7 +13,7 @@ import {
     Cell,
     Tooltip,
     ResponsiveContainer,
-    Legend
+    
 } from "recharts";
 
 interface Expense {
@@ -117,7 +117,7 @@ export default function Dashboard() {
                         </p>
 
                         <h2 className="text-3xl font-bold mt-3">
-                            ₹{spent}
+                            ₹{spent.toFixed(0)}
                         </h2>
                     </div>
 

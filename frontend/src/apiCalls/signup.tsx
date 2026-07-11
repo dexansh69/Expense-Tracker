@@ -30,7 +30,7 @@ interface LoginData {
 
 export const loginApi = async (data: LoginData) => {
  try {
-    const response = await axios.post("http://localhost:3000/api/auth/login", data);
+    const response = await API.post("/api/auth/login", data);
       
       
   return response.data;
