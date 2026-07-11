@@ -20,7 +20,7 @@ export async function signupApi(data : signupData){
             if(axios.isAxiosError(error)){
                  throw new Error(error.response?.data?.message ?? error.message);
             }
-            throw new error("something went wrong")
+            throw new Error("something went wrong")
     }
 }
 interface LoginData {

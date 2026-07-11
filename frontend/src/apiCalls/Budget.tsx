@@ -11,7 +11,7 @@ export default async function Budgetapi(Amount:number){
         return result.data;
     }
     catch(error){
-        if(axios.isAxiosError){
+        if(axios.isAxiosError(error)){
             throw new Error(error.response?.data?.message ?? error.message)
         }
          throw new Error("something went wrong");
@@ -22,7 +22,7 @@ export async function StatsApi(){
         const result = await API.get("api/stats");
         return result.data;
     }catch(error){
-        if(axios.isAxiosError){
+        if(axios.isAxiosError(error)){
             throw new Error(error.response?.data?.message ?? error.message)
         }
         throw new Error("something went wrong");
