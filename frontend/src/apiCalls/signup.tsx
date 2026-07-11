@@ -17,7 +17,7 @@ export async function signupApi(data : signupData){
 
         
     }catch(error){
-            if(axios.isAxiosError){
+            if(axios.isAxiosError(error)){
                  throw new Error(error.response?.data?.message ?? error.message);
             }
             throw new error("something went wrong")

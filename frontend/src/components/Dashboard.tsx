@@ -183,7 +183,7 @@ export default function Dashboard() {
                                     </Pie>
 
                                     <Tooltip
-                                        formatter={(value: number | string | undefined) => [`₹${value}`, "Amount"]}
+                                        formatter={(value: any) => [`₹${value ??0}`, "Amount"]}
                                     />
 
                                 </PieChart>

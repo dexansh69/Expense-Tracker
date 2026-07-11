@@ -21,6 +21,7 @@ export default function Budget() {
             if (error instanceof Error) {
                 setDisplaymessage(error.message);
             }
+            console.log(error)
         }
     }
     // STATS OF THE BUDGET PAGE NOTHING ELSE 
@@ -37,6 +38,8 @@ export default function Budget() {
         catch (error) {
             if (error instanceof Error) {
                 setDisplaymessage(error.message);
+            }else{
+                console.log(error);
             }
         }
     }
