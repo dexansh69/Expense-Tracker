@@ -27,7 +27,7 @@ export async function ListExpenseApi() {
         const List = await API.get("/api/expense/list");
         return List.data;
     } catch (error) {
-        if (axios.isAxiosError) {
+        if (axios.isAxiosError(error)) {
             throw new Error(error.response?.data?.message ?? error.message);
         }
         throw new Error("something went wrong");
@@ -38,8 +38,8 @@ export async function DeleteExpenseApi(id: number) {
         const result = await API.delete(`/api/expense/delete/${id}`)
         return result.data;
     } catch (error) {
-        if (axios.isAxiosError) {
-            throw new Error(error.reponse?.data?.message ?? error.message);
+        if (axios.isAxiosError(error)) {
+            throw new Error(error.response?.data?.message ?? error.message);
         }
         throw new Error("something went wrong")
     }
@@ -78,7 +78,7 @@ export async function SingleExpense(id: number) {
         return expense.data;
     }
     catch (error) {
-        if (axios.isAxiosError) {
+        if (axios.isAxiosError(error)) {
             throw new Error(error.response?.data?.message ?? error.message);
         }
         throw new Error("something went wrong")
