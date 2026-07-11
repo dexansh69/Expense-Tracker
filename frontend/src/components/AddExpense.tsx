@@ -30,8 +30,12 @@ export default function AddExpenseForm() {
                 description,
                 date
             })
-
             setDisplaymessage(result.message)
+            setTitle("");
+            
+            setDescription("");
+            setCategory("");
+            setDate("");
         }catch(error){
             if(error instanceof Error){
                 setDisplaymessage(error.message)
@@ -52,7 +56,7 @@ export default function AddExpenseForm() {
 
         <div className="space-y-5">
           {/* Title */}
-          <input
+          <input value={title}
           onChange={(e)=>{setTitle(e.target.value)}}
             type="text"
             placeholder="Expense Title"
@@ -73,7 +77,7 @@ export default function AddExpenseForm() {
               Category
             </label>
 
-            <select onChange={(e)=>{setCategory(e.target.value)}}
+            <select value={category}onChange={(e)=>{setCategory(e.target.value)}}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
                 <option></option>
@@ -92,7 +96,7 @@ export default function AddExpenseForm() {
               Date
             </label>
 
-            <input
+            <input value={date}
             onChange={(e)=>{setDate(e.target.value)}}
               type="date"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
@@ -100,7 +104,7 @@ export default function AddExpenseForm() {
           </div>
 
           {/* Notes */}
-          <textarea 
+          <textarea  value={description}
           onChange={(e)=>{setDescription(e.target.value)}}
             placeholder="Add a note (optional)"
             rows={4}
